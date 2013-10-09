@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.inria.myriads.libvirt</groupId>
+  <artifactId>configGenerator</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <distributionManagement>
+    <repository>
+      <id>snooze-release-repository</id>
+      <name>Snooze Release Repository</name>
+      <url>dav:https://webdav.irisa.fr/snooze.inria.fr/htdocs/maven/releases</url>
+    </repository>
+    <snapshotRepository>
+    <id>snooze-snapshot-repository</id>
+        <name>Snooze Snapshot Repository</name>
+        <url>dav:https://webdav.irisa.fr/snooze.inria.fr/htdocs/maven/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
+  
+  <build>
+    <plugins>
+	  <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-compiler-plugin</artifactId>
+	    <version>2.0.2</version>
+	    <configuration>
+	      <source>1.6</source>
+	      <target>1.6</target>
+	    </configuration>
+	  </plugin>
+    </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.wagon</groupId>
+        <artifactId>wagon-webdav-jackrabbit</artifactId>
+        <version>1.0-beta-7</version>
+       </extension>
+     </extensions>
+  </build>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.eclipse.persistence</groupId>
+  		<artifactId>org.eclipse.persistence.moxy</artifactId>
+  		<version>2.5.0</version>
+  	</dependency>
+  </dependencies>
+  <name>libvirtConfigGenerator</name>
+  <description>Config generator of libvirt template using Jaxb library.</description>
+</project>
