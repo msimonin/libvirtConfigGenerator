@@ -44,7 +44,6 @@ public class LibvirtConfigDevices
      */
     public LibvirtConfigDevices()
     {
-        emulator_ = "/usr/bin/kvm";
         disks_ = new ArrayList<LibvirtConfigDisk>();
         interfaces_ = new ArrayList<LibvirtConfigInterface>();
         serials_ = new ArrayList<LibvirtConfigSerialConsole>();

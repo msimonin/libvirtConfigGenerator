@@ -1,5 +1,8 @@
 package org.inria.myriads.libvirt.domain;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 import org.eclipse.persistence.oxm.annotations.XmlPath;
@@ -12,36 +15,30 @@ import org.eclipse.persistence.oxm.annotations.XmlPath;
  *
  */
 @XmlRootElement(name = "os")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class LibvirtConfigOs 
 {
 
     /** os type. */
+    @XmlElement(name = "type")
     private String type_;
     
     /** os arch.*/
+    @XmlPath("type/@arch")
     private String typeArch_; 
     
     /** os machine.*/
+    @XmlPath("type/@machine")
     private String typeMachine_;
 
     /** boot.*/
-    @SuppressWarnings("unused")
+    @XmlElement(name = "boot")
     private String boot_;
     
     /** boot dev. */
+    @XmlPath("boot/@dev")
     private String bootDev_;
     
-    /**
-     * 
-     */
-    public LibvirtConfigOs()
-    {
-        typeArch_ = "x86_64";
-        typeMachine_ = "pc-0.12";
-        type_ = "hvm";
-        bootDev_ = "hd"; 
-    }
-
 
     /**
      * @return the type
@@ -66,7 +63,6 @@ public class LibvirtConfigOs
     /**
      * @return the typeArch
      */
-    @XmlPath("type/@arch")
     public String getTypeArch()
     {
         return typeArch_;
@@ -87,7 +83,6 @@ public class LibvirtConfigOs
     /**
      * @return the typeMachine
      */
-    @XmlPath("type/@machine")
     public String getTypeMachine()
     {
         return typeMachine_;
@@ -109,7 +104,6 @@ public class LibvirtConfigOs
     /**
      * @return the bootDev
      */
-    @XmlPath("boot/@dev")
     public String getBootDev()
     {
         return bootDev_;

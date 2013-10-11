@@ -261,4 +261,15 @@ public class LibvirtConfigDomain
         getDevices().addSerial(console);
         return this;
     }
+
+    /**
+     * 
+     * Sets the os type.
+     * 
+     * @param type  the type
+     */
+    public void setOsType(String type)
+    {
+        getOs().setType(type);
+    }
 }
