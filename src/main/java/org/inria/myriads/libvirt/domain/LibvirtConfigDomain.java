@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *
  */
 @XmlRootElement(name = "domain")
-@XmlType (name = "", propOrder = {"uuid", "name", "memory", "vcpus", "os", "features", "devices" })
+@XmlType (name = "", propOrder = {"uuid", "name", "memory", "vcpu", "os", "features", "devices" })
 public class LibvirtConfigDomain 
 {
     /** virtualization type. */
@@ -30,10 +30,10 @@ public class LibvirtConfigDomain
     private String name_;
     
     /** domain vcpus.*/
-    private int vcpus_ = 1;
+    private int vcpu_;
     
     /** domain memory.*/
-    private long memory_ = 1024 * 128;
+    private long memory_;
 
     /** domain os.*/
     private LibvirtConfigOs os_;
@@ -114,18 +114,18 @@ public class LibvirtConfigDomain
     /**
      * @return the vcpus_
      */
-    public int getVcpus()
+    public int getVcpu()
     {
-        return vcpus_;
+        return vcpu_;
     }
 
     /**
      * @param vcpus the vcpus to set
      * @return this
      */
-    public LibvirtConfigDomain setVcpus(int vcpus)
+    public LibvirtConfigDomain setVcpu(int vcpus)
     {
-        this.vcpus_ = vcpus;
+        this.vcpu_ = vcpus;
         return this;
     }
 
