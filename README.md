@@ -48,6 +48,13 @@ Marshalling and unmarshalling library of libvirt template.
       .setTargetPort("0")
       .setTargetType("serial");
     config.addConsole(console);
+
+    LibvirtConfigGraphics graphics = new LibvirtConfigGraphics();
+    graphics.setType("vnc")
+      .setListen("0.0.0.0")
+      .setPort("5900");
+                                     
+    config.addGraphics(graphics);
        
     // marshalling    
     jaxbContext = JAXBContext.newInstance(LibvirtConfigDomain.class);
@@ -90,6 +97,7 @@ Marshalling and unmarshalling library of libvirt template.
           <serial type="pty">
              <target type="serial" port="0"/>
           </serial>
+          <graphics type="vnc" listen="0.0.0.0" port="5900"/>
        </devices>
     </domain>
 ```
