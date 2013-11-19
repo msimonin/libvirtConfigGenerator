@@ -69,13 +69,13 @@ public class LibvirtConfigDisk
        type_ = "file";
    }
    
-/**
- * @return the device
- */
-public String getDevice()
-{
-    return device_;
-}
+    /**
+     * @return the device
+     */
+    public String getDevice()
+    {
+        return device_;
+    }
 
 /**
  * @param device the device to set

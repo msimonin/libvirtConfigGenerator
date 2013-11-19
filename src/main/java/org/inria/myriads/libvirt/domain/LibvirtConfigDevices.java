@@ -39,6 +39,10 @@ public class LibvirtConfigDevices
     @XmlElement(name = "console")
     private ArrayList<LibvirtConfigSerialConsole> consoles_;
     
+    /** graphics.*/
+    @XmlElement(name = "graphics")
+    private ArrayList<LibvirtConfigGraphics> graphics_;
+    
     /**
      * Constructor. 
      */
@@ -48,6 +52,7 @@ public class LibvirtConfigDevices
         interfaces_ = new ArrayList<LibvirtConfigInterface>();
         serials_ = new ArrayList<LibvirtConfigSerialConsole>();
         consoles_ = new ArrayList<LibvirtConfigSerialConsole>();
+        graphics_ = new ArrayList<LibvirtConfigGraphics>();
     }
 
     /**
@@ -189,6 +194,38 @@ public class LibvirtConfigDevices
     public LibvirtConfigDevices addConsole(LibvirtConfigSerialConsole console) 
     {
         getSerials().add(console);
+        return this;
+    }
+
+    /**
+     * 
+     * Add a graphics section.
+     * 
+     * @param graphics  the graphics to add.
+     * @return  this.
+     */
+    public LibvirtConfigDevices addGraphics(LibvirtConfigGraphics graphics)
+    {
+        getGraphics().add(graphics);
+        return this;
+    }
+
+    /**
+     * @return the graphics
+     */
+    public ArrayList<LibvirtConfigGraphics> getGraphics() 
+    {
+        return graphics_;
+    }
+
+   
+    /**
+     * @param graphics  The graphics to set.
+     * @return  this.
+     */
+    public LibvirtConfigDevices setGraphics(ArrayList<LibvirtConfigGraphics> graphics) 
+    {
+        graphics_ = graphics;
         return this;
     }
 }
