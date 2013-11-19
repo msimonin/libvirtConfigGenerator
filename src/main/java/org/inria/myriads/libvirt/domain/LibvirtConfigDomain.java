@@ -264,6 +264,18 @@ public class LibvirtConfigDomain
 
     /**
      * 
+     * Add a graphic.
+     * 
+     * @param graphics   The graphics to add.
+     * @return this
+     */
+    public LibvirtConfigDomain addGraphics(LibvirtConfigGraphics graphics)
+    {
+        getDevices().addGraphics(graphics);
+        return this;
+    }
+    /**
+     * 
      * Sets the os type.
      * 
      * @param type  the type
