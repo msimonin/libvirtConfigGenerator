@@ -1,4 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <name>libvirtConfigGenerator</name>
+  <description>Config generator of libvirt template using Jaxb library.</description>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.inria.myriads.libvirt</groupId>
   <artifactId>configGenerator</artifactId>
@@ -25,7 +27,7 @@
 
   
   <build>
-    <plugins>
+   <plugins>
 	  <plugin>
 	    <groupId>org.apache.maven.plugins</groupId>
 	    <artifactId>maven-compiler-plugin</artifactId>
@@ -34,16 +36,29 @@
 	      <source>1.7</source>
 	      <target>1.7</target>
 	    </configuration>
-	  </plugin>
-    </plugins>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-webdav-jackrabbit</artifactId>
-        <version>1.0-beta-7</version>
-       </extension>
-     </extensions>
+ 	 </plugin>
+   </plugins>
+    
+  <extensions>
+    <extension>
+      <groupId>org.apache.maven.wagon</groupId>
+      <artifactId>wagon-webdav-jackrabbit</artifactId>
+      <version>1.0-beta-7</version>
+     </extension>
+   </extensions>
+     
+   <resources>
+      <resource>
+        <directory>${basedir}/src/main/java</directory>
+        <includes>
+          <include>**/jaxb.properties</include>
+        </includes>
+      </resource>
+    </resources>
+    
   </build>
+  
+
   
   <dependencies>
   	<dependency>
@@ -52,6 +67,5 @@
   		<version>2.5.0</version>
   	</dependency>
   </dependencies>
-  <name>libvirtConfigGenerator</name>
-  <description>Config generator of libvirt template using Jaxb library.</description>
+
 </project>
