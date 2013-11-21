@@ -29,6 +29,10 @@ public class LibvirtConfigGraphics
     @XmlAttribute(name = "port")
     private String port_;
 
+    /** Keymap.*/
+    @XmlAttribute(name = "keymap")
+    private String keymap_;
+
     /**
      * @return the type
      */
@@ -82,6 +86,26 @@ public class LibvirtConfigGraphics
     {
         port_ = port;
         return this;
+    }
+
+    /**
+     * 
+     * @param keymap    the keymap to set
+     * return this
+     */
+    public LibvirtConfigGraphics setKeymap(String keymap)
+    {
+        keymap_ = keymap;
+        return this;
+        
+    }
+
+    /**
+     * @return the keymap
+     */
+    public String getKeymap() 
+    {
+        return keymap_;
     }
     
    
