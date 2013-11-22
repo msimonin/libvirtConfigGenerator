@@ -113,6 +113,24 @@ For example, we get the capabilities of libvirt in a file: `$ virsh capabilities
     jaxbUnmarshaller = jaxbContext.createUnmarshaller();
     LibvirtConfigCapabilities cap = (LibvirtConfigCapabilities) jaxbUnmarshaller.unmarshal(new File("/tmp/cap.xml"));
 ```
-  
-  
+
+## Maven 
+
+This project is managed with maven. Add the following line to your pom.xml.
+
+```xml
+<repository>
+    <id>snooze repository releases</id>
+    <name>snooze repo</name>
+    <url>http://snooze.inria.fr/maven/releases</url>
+</repository>
+```
+
+```xml
+<dependency>
+  <groupId>org.inria.myriads.libvirt</groupId>
+  <artifactId>configGenerator</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
   
