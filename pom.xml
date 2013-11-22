@@ -20,9 +20,9 @@
   </distributionManagement>
 
   <scm>
-    <connection>scm:git:http://github.com/snoozesoftware/EC2ConfigGenerator.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/snoozesoftware/EC2ConfigGenerator.git</developerConnection>
-    <url>https://github.com/snoozesoftware/EC2ConfigGenerator.git</url>
+    <connection>scm:git:http://github.com/snoozesoftware/libvirtConfigGenerator.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/snoozesoftware/libvirtConfigGenerator.git</developerConnection>
+    <url>https://github.com/snoozesoftware/libvirtConfigGenerator.git</url>
   </scm>
 
   
