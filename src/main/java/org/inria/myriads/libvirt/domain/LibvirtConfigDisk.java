@@ -36,6 +36,10 @@ public class LibvirtConfigDisk
    @XmlPath("driver/@type")
    private String driverType_;
    
+   /** Cache type.*/
+   @XmlPath("driver/@cache")
+   private String driverCache_;
+   
    /** source.*/
    @XmlElement(name = "source")
    private String source_;
@@ -192,6 +196,23 @@ public String getTargetDev()
 public LibvirtConfigDisk setTargetDev(String targetDev)
 {
     targetDev_ = targetDev;
+    return this;
+}
+
+/**
+ * @return the driverCache
+ */
+public String getDriverCache() 
+{
+    return driverCache_;
+}
+
+/**
+ * @param driverCache the driverCache to set
+ */
+public LibvirtConfigDisk setDriverCache(String driverCache) 
+{
+    driverCache_ = driverCache;
     return this;
 }
    
